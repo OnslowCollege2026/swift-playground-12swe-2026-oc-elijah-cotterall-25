@@ -1,43 +1,83 @@
 // The Swift Programming Language
 // https://docs.swift.org/swift-book
 
+let line = "---------"
+
+func total(of matrix: [[Int]]) -> Int {
+    var sum = 0
+    for row in matrix {
+        for value in row {
+            sum += value
+        }
+    }
+    return sum
+}
+
+func rowTotal(in matrix: [[Int]], row: Int) -> Int {
+    guard row > 0 && row < matrix.count else { return 0 }
+    return matrix[row].reduce(0, +)
+}
+
 @main
 struct SwiftPlayground {
     static func main() {
-        let maximumItemVolume = 2.0
 
-        print("Enter the room length: ")
-        guard let userInput = readLine(), let number = Double(userInput), number >= 0 else {
-            print("Invaild number.")
-            }
-            roomLength = number
-            
-            print("Enter the room Width: ")
-            guard let userInput = readLine(), let roomWidth = Double(userInput) else {
+        let scores = [
+            [78, 82, 91],
+            [65, 70, 68],
+            [88, 94, 90],
+        ]
 
-            print("Enter the room height: ")
-            guard let userInput = readLine(), let roomHeight = Double(userInput) else {
-                let roomArea = roomLength * roomWidth
-                let roomVolume = roomArea * roomHeight
+        let firstRow = scores[0]
+        let value = scores[2][1]
+        print(firstRow)
+        print(value)
 
-            print("Room Area: \(roomArea) m²")
-            print("Room Volume: \(roomVolume )m³")
+        print(line)
 
-                let furnitureVolumes = [1.2, 0.8, 2.5, 0.6, 1.0]
+        let grid = [
+            [10, 20, 30],
+            [40, 50, 60],
+        ]
 
-                var totalFurnitureVolume = 0.0
+        print(grid[0][0])
+        print(grid[1][2])
 
-                    furnitureVolumes.enumerated().forEach { index, volume in
-                    print("Item \(index + 1): \(volume) m³")
-                    if volume > maximumItemVolume {
-                    print("Oversized item Detected.")
-                    }
-                    totalFurnitureVolume = totalFurnitureVolume + volume
-                }
+        print(line)
 
-                let usableVolume = roomVolume - totalFurnitureVolume
-                print("Usable volume: \(usableVolume) m³")
+        let gridLoop = [
+            [1, 2, 3],
+            [4, 5, 6],
+        ]
+
+        for row in gridLoop {
+            for valueLoop in row {
+                print(valueLoop)
             }
         }
+
+        print(line)
+
+        let marks = [
+            [5, 4, 3],
+            [2, 4, 5],
+        ]
+
+        print(total(of: marks))
+
+        print(line)
+
+        let tableB = [
+            [2, 4, 6],
+            [8, 10, 12],
+            [14, 16, 18],
+        ]
+
+        for row in tableB {
+            for valueB in row {
+                print(valueB)
+            }
+        }
+
     }
 }
