@@ -1,6 +1,12 @@
 //// The Swift Programming Language
 //// https://docs.swift.org/swift-book
 
+/**
+*TODO: Fix magic numbers
+*TODO: Use advanced .count
+*TODO: Add functions for repetitive tasks
+*/
+
 @main
 struct SwiftPlayground {
     static func main() {
