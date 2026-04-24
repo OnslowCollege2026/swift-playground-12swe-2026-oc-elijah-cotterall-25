@@ -14,27 +14,44 @@ TODO: most is entire remaining stock but limited to bags at which can hold up to
 struct SwiftPlayground {
     static func main() {
 
+        // let currentProductAmount = 50
+        // let maximumProductAmount = 50
+        // let minimumProductAmount = 0.100
+        // let bagPriceAmount = 0.20
+        // let maxBagAmount = 5000
 
-        let maximumProductAmount = 500
+        let mainMenu = """
+            [The Roadside Kumara Stall]
 
-        print("\(maximumProductAmount)")
-        
-        let minimumProductAmount = 0.100
-
-        print("\(minimumProductAmount)")
-        let bagPriceAmount = 0.20
-
-        print("\(bagPriceAmount)")
-        let maxBagAmount = 5000
-        print("\(maxBagAmount)")
-
-        print("This purchase will be made in (KG).")
-        print("Enter the amount of product you would like to buy: ")
-        guard let userInput = readLine(), let productAmount = Double(userInput),
-            productAmount >= 0.100
-        else {
-            print("Invaild number.")
+            1.Purchase
+            2.Check Stock
+            3.Show Prices & Limits
+            4.Exit
+            """
+        func printmainMenu() {
+            print("\(mainMenu)")
         }
 
+        let inputMenu = """
+                print("Enter a listed option: ")
+            """
+        func inputMenu() {
+            print("\(inputMenu)")
+        }
+
+        let priceAndInfoMenu = """
+            Kumara is charged at 3 dollars ($3) a kilogram.
+            Each Bag costs 20 cents ($0.20)
+            The least amount of kumara that can be purchased in a single purchase is 100 grams (0.100 KG)
+            The Amount of kumara in the bin is 50 KG
+            The most kumara that a bag can have is 5KG.
+            The most amount of kumara that can be purchased in a single purchase is the entire remaining stock but limited to the amount of bags and bag weight.
+            The amount of bags is 5,000
+            """
+        func printPriceAndInfoMenu() {
+            print("\(priceAndInfoMenu)")
+        }
+
+        printPriceAndInfoMenu()
     }
 }
